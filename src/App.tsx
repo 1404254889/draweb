@@ -4148,7 +4148,7 @@ export default function App() {
     const path = window.location.pathname.replace(/\/$/, '') || '/';
     // /login → 直接登录页（跳过 splash）
     if (path === '/draweb/login' || path.endsWith('/login')) return 'login';
-    // /go 或 / 或 /draweb → 正常走 splash → home
+    // /spl 或 / → 正常走 splash → home
     return 'splash';
   };
 
