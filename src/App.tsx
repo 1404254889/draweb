@@ -4141,9 +4141,8 @@ export default function App() {
       window.history.replaceState(null, '', redirectPath);
     }
     // /home 快捷入口 → 直接进主页
-    if (sessionStorage.getItem('skipAuth') === '1') {
-      sessionStorage.removeItem('skipAuth');
-      window.history.replaceState(null, '', '/draweb/');
+    if (window.location.hash === '#/home') {
+      window.history.replaceState(null, '', window.location.pathname);
       return 'home';
     }
     const path = window.location.pathname.replace(/\/$/, '') || '/';
