@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // GitHub Pages SPA fallback: redirect all 404s to SPA with original path
+    const path = window.location.pathname;
+    const base = '/draweb/';
+    sessionStorage.setItem('redirect', path);
+    window.location.replace(base);
+  </script>
+</head>
+</html>
