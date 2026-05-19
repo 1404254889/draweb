@@ -4140,6 +4140,11 @@ export default function App() {
       sessionStorage.removeItem('redirect');
       window.history.replaceState(null, '', redirectPath);
     }
+    // /go 快捷入口 → 直接进主页
+    if (window.location.search.includes('from=go')) {
+      window.history.replaceState(null, '', window.location.pathname);
+      return 'home';
+    }
     const path = window.location.pathname.replace(/\/$/, '') || '/';
     // /login → 直接登录页（跳过 splash）
     if (path === '/draweb/login' || path.endsWith('/login')) return 'login';
